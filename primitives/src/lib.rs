@@ -10,11 +10,15 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 #![deny(warnings)]
 #![deny(missing_docs)]
+#![feature(trait_alias)]
 #[cfg(test)]
 extern crate std;
 
 #[macro_use]
 extern crate derivative;
+
+#[macro_use]
+extern crate ark_std;
 
 pub mod aead;
 pub mod circuit;
@@ -25,6 +29,7 @@ pub mod errors;
 pub mod hash_to_group;
 pub mod merkle_tree;
 pub mod pcs;
+pub mod poseidon;
 pub mod prf;
 pub mod rescue;
 pub mod signatures;

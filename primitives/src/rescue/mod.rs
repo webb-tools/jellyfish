@@ -351,6 +351,7 @@ impl<F: RescueParameter> PRP<F> {
             let exp = if (i % 2).is_zero() { F::A_INV } else { &[F::A] };
             aux.pow(exp);
             aux.linear(&self.mds, &self.key_injection[i]);
+            println!("key injection: {:?}", self.key_injection[i]);
             round_keys.push(aux);
         });
         round_keys
@@ -772,7 +773,6 @@ mod test_permutation {
         let rescue_hash = Permutation::default();
         let zero = RescueVector::zero();
         let keys2 = rescue_perm.key_schedule(&zero);
-
         // // the following code is used to dump the key schedule to screen
         // // in a sage friendly format
         // for e in keys2.iter() {

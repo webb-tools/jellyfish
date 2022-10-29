@@ -7,6 +7,7 @@
 //! This module implements three different types of transcripts that are
 //! supported.
 
+pub(crate) mod poseidon;
 pub(crate) mod rescue;
 pub(crate) mod solidity;
 pub(crate) mod standard;

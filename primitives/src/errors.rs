@@ -6,7 +6,7 @@
 
 //! Error types.
 
-use crate::rescue::errors::RescueError;
+use crate::{poseidon::errors::PoseidonError, rescue::errors::RescueError};
 use ark_serialize::SerializationError;
 use ark_std::string::String;
 use displaydoc::Display;
@@ -27,6 +27,8 @@ pub enum PrimitivesError {
     FailedDecryption(String),
     /// Rescue Error: {0}
     RescueError(RescueError),
+    /// Poseidon Error: {0}
+    PoseidonError(PoseidonError),
     /// Inconsistent Structure error, {0}
     InconsistentStructureError(String),
 }
